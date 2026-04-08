@@ -1,0 +1,42 @@
+{
+    "zabbix_export": {
+        "version": "7.4",
+        "media_types": [
+            {
+                "name": "zbxExpress",
+                "type": "SCRIPT",
+                "script_name": "zbxExpress.py",
+                "parameters": [
+                    {
+                        "sortorder": "0",
+                        "value": "{ALERT.SENDTO}"
+                    },
+                    {
+                        "sortorder": "1",
+                        "value": "{ALERT.MESSAGE}"
+                    }
+                ],
+                "message_templates": [
+                    {
+                        "event_source": "TRIGGERS",
+                        "operation_mode": "PROBLEM",
+                        "subject": "Problem: {EVENT.NAME} on {HOST.NAME}",
+                        "message": "{\n  \"event_id\": \"{EVENT.ID}\",\n  \"trigger_id\": \"{TRIGGER.ID}\",\n  \"event_name\": \"{EVENT.NAME}\",\n  \"host_name\": \"{HOST.NAME}\",\n  \"severity\": \"{TRIGGER.SEVERITY}\",\n  \"event_value\": \"{EVENT.VALUE}\",\n  \"event_update_status\": \"{EVENT.UPDATE.STATUS}\",\n  \"last_value\": \"{ITEM.LASTVALUE1}\",\n  \"event_time\": \"{EVENT.TIME}\",\n  \"event_date\": \"{EVENT.DATE}\",\n  \"duration\": \"{EVENT.AGE}\",\n  \"event_tags\": \"{EVENT.TAGS}\",\n  \"trigger_url\": \"{$ZABBIX.URL}/tr_events.php?triggerid={TRIGGER.ID}&eventid={EVENT.ID}\",\n  \"item_id1\": \"{ITEM.ID1}\",\n  \"item_id2\": \"{ITEM.ID2}\",\n  \"item_id3\": \"{ITEM.ID3}\",\n  \"item_id4\": \"{ITEM.ID4}\",\n  \"host_id\": \"{HOST.ID}\",\n  \"action_id\": \"{ACTION.ID}\"\n}"
+                    },
+                    {
+                        "event_source": "TRIGGERS",
+                        "operation_mode": "RECOVERY",
+                        "subject": "Recovery: {EVENT.NAME} on {HOST.NAME}",
+                        "message": "{\n  \"event_id\": \"{EVENT.ID}\",\n  \"trigger_id\": \"{TRIGGER.ID}\",\n  \"event_name\": \"{EVENT.NAME}\",\n  \"host_name\": \"{HOST.NAME}\",\n  \"severity\": \"{TRIGGER.SEVERITY}\",\n  \"event_value\": \"{EVENT.VALUE}\",\n  \"event_update_status\": \"{EVENT.UPDATE.STATUS}\",\n  \"last_value\": \"{ITEM.LASTVALUE1}\",\n  \"event_time\": \"{EVENT.TIME}\",\n  \"event_date\": \"{EVENT.DATE}\",\n  \"duration\": \"{EVENT.AGE}\",\n  \"event_tags\": \"{EVENT.TAGS}\",\n  \"trigger_url\": \"{$ZABBIX.URL}/tr_events.php?triggerid={TRIGGER.ID}&eventid={EVENT.ID}\",\n  \"item_id1\": \"{ITEM.ID1}\",\n  \"item_id2\": \"{ITEM.ID2}\",\n  \"item_id3\": \"{ITEM.ID3}\",\n  \"item_id4\": \"{ITEM.ID4}\",\n  \"host_id\": \"{HOST.ID}\",\n  \"action_id\": \"{ACTION.ID}\"\n}"
+                    },
+                    {
+                        "event_source": "TRIGGERS",
+                        "operation_mode": "UPDATE",
+                        "subject": "Update: {EVENT.NAME} on {HOST.NAME}",
+                        "message": "{\n  \"event_id\": \"{EVENT.ID}\",\n  \"trigger_id\": \"{TRIGGER.ID}\",\n  \"event_name\": \"{EVENT.NAME}\",\n  \"host_name\": \"{HOST.NAME}\",\n  \"severity\": \"{TRIGGER.SEVERITY}\",\n  \"event_value\": \"{EVENT.VALUE}\",\n  \"event_update_status\": \"{EVENT.UPDATE.STATUS}\",\n  \"last_value\": \"{ITEM.LASTVALUE1}\",\n  \"event_time\": \"{EVENT.TIME}\",\n  \"event_date\": \"{EVENT.DATE}\",\n  \"duration\": \"{EVENT.AGE}\",\n  \"event_tags\": \"{EVENT.TAGS}\",\n  \"trigger_url\": \"{$ZABBIX.URL}/tr_events.php?triggerid={TRIGGER.ID}&eventid={EVENT.ID}\",\n  \"item_id1\": \"{ITEM.ID1}\",\n  \"item_id2\": \"{ITEM.ID2}\",\n  \"item_id3\": \"{ITEM.ID3}\",\n  \"item_id4\": \"{ITEM.ID4}\",\n  \"host_id\": \"{HOST.ID}\",\n  \"action_id\": \"{ACTION.ID}\"\n}"
+                    }
+                ]
+            }
+        ]
+    }
+}
